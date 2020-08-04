@@ -28,7 +28,8 @@
       opener.postMessage({
         title:title,
         code: getQuery('code'),
-        state: getQuery('state')
+        state: getQuery('state'),
+        error_description: getQuery('error_description');
       })
 
 
