@@ -15,6 +15,7 @@
 
       queryInfo = location.search
       let getQuery = (searchQuery) =>{
+        if(queryInfo.indexOf(searchQuery)===-1)return false;
         l = searchQuery.length+1;
         s = queryInfo.indexOf(searchQuery)+l;
         v = queryInfo.substring(s);
@@ -23,7 +24,12 @@
         end===-1 || (v = v.substring(0,end));
         return v;
       }
-
+      title = (getQuery('error')===false) ? 'success':'error';
+      opener.postMessage({
+        title:title,
+        code: getQuery('code'),
+        state: getQuery('state')
+      })
 
 
     }
