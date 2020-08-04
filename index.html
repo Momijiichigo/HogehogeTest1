@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>lol</title>
+</head>
+<body>
+  <script>
+    var userAgent = navigator.userAgent.toLowerCase();
+    if (userAgent.indexOf(' electron/') > -1) {
+      // Electron-specific code
+
+
+
+      queryInfo = location.search
+      let getQuery = (searchQuery) =>{
+        l = searchQuery.length+1;
+        s = queryInfo.indexOf(searchQuery)+l;
+        v = queryInfo.substring(s);
+        end = v.indexOf('&');
+        console.log(end)
+        end===-1 || (v = v.substring(0,end));
+        return v;
+      }
+
+
+
+    }
+  </script>
+</body>
+</html>
